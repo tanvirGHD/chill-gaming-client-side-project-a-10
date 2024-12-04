@@ -8,14 +8,14 @@ const WatchList = () => {
   if (!reviews) {
     return (
       <div className="p-6 text-center">
-        <h2 className="text-xl text-red-500">No items in your Watchlist yet.</h2>
+        <h2 className="text-xl text-red-500">No items in your WatchList yet.</h2>
       </div>
     );
   }
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">My Watchlist</h2>
+      <h2 className="text-2xl font-bold mb-4">My WatchList</h2>
       <table className="table-auto w-full border-collapse border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
