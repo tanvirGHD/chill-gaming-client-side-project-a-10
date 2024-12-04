@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
+
 const AllReviews = () => {
   const reviews = useLoaderData();
   console.log(reviews)
+
 
   return (
     <div className="p-4">
@@ -31,8 +33,8 @@ const AllReviews = () => {
               <strong>Text:</strong> {review.text}
             </p>
             {/* <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-                            <Link to="reviewDetails">Explore Details</Link>
-                        </button> */}
+                  <Link to="reviewDetails">Explore Details</Link>
+                  </button> */}
             <Link
             //   to={`/allReviews/reviewDetails/${review._id}`}
               className="mt-4 text-blue-500 hover:underline"
@@ -45,5 +47,6 @@ const AllReviews = () => {
     </div>
   );
 };
+
 
 export default AllReviews;
