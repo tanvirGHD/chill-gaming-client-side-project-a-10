@@ -2,7 +2,6 @@
 // import { AuthContext } from "../../provider/AuthProvider";
 // import Swal from "sweetalert2";
 
-
 // const Register = () => {
 //   const {createUser} = useContext(AuthContext)
 
@@ -53,11 +52,7 @@
 //       console.log('Error',error.message)
 //     })
 
-
 //   }
-
-
-
 
 //     return (
 //     <div class="flex items-center justify-center md:py-24 bg-gray-100">
@@ -130,21 +125,13 @@
 
 // export default Register;
 
-
-
-
-
-
-
-
-
-
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createNewUser, setUser } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -157,12 +144,14 @@ const Register = () => {
 
     console.log(email, password);
 
-    createUser(email, password)
+    createNewUser(email, password)
       .then((result) => {
         console.log("User created in Firebase", result.user);
+        const user = result.user;
+        setUser(user)
         // const createdAt = result?.user?.metadata?.creationTime;
 
-        // const newUser = {name, email,photo,createdAt}
+        // const newUser = {name, email,photo}
         const newUser = { email };
 
         // Save new user info to DB
@@ -194,12 +183,16 @@ const Register = () => {
   return (
     <div className="flex items-center justify-center md:py-24 bg-gray-100">
       <div className="card bg-white w-full max-w-lg shadow-2xl rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-700 text-center">Register</h2>
+        <h2 className="text-3xl font-bold text-gray-700 text-center">
+          Register
+        </h2>
         <form onSubmit={handleRegister} className="space-y-6">
           {/* Username Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">Username</span>
+              <span className="label-text font-medium text-gray-700">
+                Username
+              </span>
             </label>
             <input
               type="text"
@@ -212,7 +205,9 @@ const Register = () => {
           {/* Email Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">Email</span>
+              <span className="label-text font-medium text-gray-700">
+                Email
+              </span>
             </label>
             <input
               type="email"
@@ -225,7 +220,9 @@ const Register = () => {
           {/* Password Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">Password</span>
+              <span className="label-text font-medium text-gray-700">
+                Password
+              </span>
             </label>
             <input
               type="password"
@@ -238,7 +235,9 @@ const Register = () => {
           {/* Photo URL Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">Photo URL</span>
+              <span className="label-text font-medium text-gray-700">
+                Photo URL
+              </span>
             </label>
             <input
               type="url"
@@ -257,6 +256,12 @@ const Register = () => {
               Register
             </button>
           </div>
+          <h2 className="text-center text-lg font-bold">
+            Already have An Accout? Plaese{" "}
+            <span className="text-red-500 font-bold">
+              <Link to="/login">Login</Link>
+            </span>
+          </h2>
         </form>
       </div>
     </div>
