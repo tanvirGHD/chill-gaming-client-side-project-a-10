@@ -12,6 +12,12 @@ import UpdateReview from "./components/Reviews/UpdateReview.jsx";
 import MyReviews from "./components/Reviews/MyReviews.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
 import ReviewDetails from "./components/Reviews/ReviewDetails.jsx";
+import PrivateRoute from "./components/privateRoute/PrivateRoute.jsx";
+import WatchList from "./components/watchList/WatchList.jsx";
+import UpcomingGames from "./components/More/UpcomingGames.jsx";
+import PopularGames from "./components/More/PopularGames.jsx";
+import LatestReviews from "./components/More/LatestReviews.jsx";
+import Error from "./components/error/Error.jsx";
 
 
 
@@ -38,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'addReview',
-        element: <AddReview></AddReview>
+        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
       },
       {
         path:'updateReview',
@@ -46,19 +52,34 @@ const router = createBrowserRouter([
       },
       {
         path: '/myReviews',
-        element: <MyReviews></MyReviews>,
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
         loader: ()=> fetch('http://localhost:5000/review')
       },
       {
+        path:'/watchList',
+        element:<PrivateRoute><WatchList></WatchList></PrivateRoute>
+      },
+      {
         path: '/details/:id',
-        element:<ReviewDetails></ReviewDetails>,
+        element:<PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+      },
+      {
+        path: '/upcomingGames',
+        element:<UpcomingGames></UpcomingGames>
+      },
+      {
+        path: '/latestReviews',
+        element:<LatestReviews></LatestReviews>
+      },
+      {
+        path: '/popularGames',
+        element:<PopularGames></PopularGames>
+      },
+      {
+        path:'*',
+        element:<Error></Error>
       }
-      // {
-      //   path: '/allReviews/reviewDetails/:id',
-      //   element: <ReviewDetails></ReviewDetails>,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`),
-      // }
     ],
   },
 ]);
