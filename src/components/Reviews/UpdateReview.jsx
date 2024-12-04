@@ -26,7 +26,7 @@ const navigate = useNavigate();
 
 
     // send data to the server
-    fetch(`http://localhost:5000/review/${_id}`,{
+    fetch(`https://assignment-10-server-side-neon.vercel.app/review/${_id}`,{
       method: 'PUT',
       headers: {
         'content-type':'application/json'

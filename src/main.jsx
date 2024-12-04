@@ -32,12 +32,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/review')
+        loader: () => fetch('https://assignment-10-server-side-neon.vercel.app/review')
       },
       {
         path: 'allReviews',
         element: <AllReviews></AllReviews>,
-        loader: () => fetch('http://localhost:5000/review')
+        loader: () => fetch('https://assignment-10-server-side-neon.vercel.app/review')
       },
       // {
       //   path:'highestRatedGames',
@@ -56,23 +56,23 @@ const router = createBrowserRouter([
       {
         path:'updateReview/:id', 
         element: <UpdateReview></UpdateReview>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-neon.vercel.app/review/${params.id}`)
       },
       {
         path: '/myReviews',
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/review')
+        loader: ()=> fetch('https://assignment-10-server-side-neon.vercel.app/review')
       },
       {
         path:'/watchList/:id',
         element:<PrivateRoute><WatchList></WatchList></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-neon.vercel.app/review/${params.id}`)
         
       },
       {
         path: '/details/:id',
         element:<PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-neon.vercel.app/review/${params.id}`)
       },
       {
         path: '/upcomingGames',

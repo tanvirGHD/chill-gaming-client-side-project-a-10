@@ -20,7 +20,7 @@ const MyReviews = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete from the database
-        fetch(`http://localhost:5000/review/${id}`, {
+        fetch(`https://assignment-10-server-side-neon.vercel.app/review/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
