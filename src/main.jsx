@@ -11,7 +11,8 @@ import AddReview from "./components/Reviews/AddReview.jsx";
 import UpdateReview from "./components/Reviews/UpdateReview.jsx";
 import MyReviews from "./components/Reviews/MyReviews.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
-// import ReviewDetails from "./components/Reviews/ReviewDetails.jsx";
+import ReviewDetails from "./components/Reviews/ReviewDetails.jsx";
+
 
 
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         path: '/myReviews',
         element: <MyReviews></MyReviews>,
         loader: ()=> fetch('http://localhost:5000/review')
+      },
+      {
+        path: '/details/:id',
+        element:<ReviewDetails></ReviewDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
       }
       // {
       //   path: '/allReviews/reviewDetails/:id',
