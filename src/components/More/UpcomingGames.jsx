@@ -2,9 +2,9 @@
 import React from "react";
 
 const upcomingGames = [
-  { title: "Game 1", releaseDate: "January 2025", imageUrl: "https://images.pexels.com/photos/1234567/pexels-photo-1234567.jpeg" },
-  { title: "Game 2", releaseDate: "February 2025", imageUrl: "https://images.pexels.com/photos/1234568/pexels-photo-1234568.jpeg" },
-  { title: "Game 3", releaseDate: "March 2025", imageUrl: "https://images.pexels.com/photos/1234569/pexels-photo-1234569.jpeg" },
+  { title: "Game 1", releaseDate: "January 2025", imageUrl: "https://i.ibb.co.com/64vTy5G/side-view-gamer-sitting-chair.jpg" },
+  { title: "Game 2", releaseDate: "February 2025", imageUrl: "https://i.ibb.co.com/6J4hcT2/11.jpg" },
+  { title: "Game 3", releaseDate: "March 2025", imageUrl: "https://i.ibb.co.com/5jrjPWw/12.jpg" },
 ];
 
 const UpcomingGames = () => {

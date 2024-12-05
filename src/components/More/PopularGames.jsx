@@ -2,9 +2,9 @@
 import React from "react";
 
 const popularGames = [
-  { title: "The Legend of Zelda", rating: "5/5", imageUrl: "https://images.pexels.com/photos/1234573/pexels-photo-1234573.jpeg" },
-  { title: "Call of Duty", rating: "4.7/5", imageUrl: "https://images.pexels.com/photos/1234574/pexels-photo-1234574.jpeg" },
-  { title: "FIFA 2024", rating: "4.8/5", imageUrl: "https://images.pexels.com/photos/1234575/pexels-photo-1234575.jpeg" },
+  { title: "The Legend of Zelda", rating: "5/5", imageUrl: "https://i.ibb.co.com/fS3WpGK/7.jpg" },
+  { title: "Call of Duty", rating: "4.7/5", imageUrl: "https://i.ibb.co.com/BC99B3S/8.jpg" },
+  { title: "FIFA 2024", rating: "4.8/5", imageUrl: "https://i.ibb.co.com/16TMKgF/9.jpg" },
 ];
 
 const PopularGames = () => {

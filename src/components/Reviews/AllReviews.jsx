@@ -96,6 +96,7 @@
 
 
 import React, { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllReviews = () => {
@@ -191,6 +192,7 @@ const AllReviews = () => {
       {/* Display sorted and filtered reviews */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedReviews.map((review) => (
+          <Fade key={review._id} direction="up" cascade>
           <div key={review._id} className="bg-white rounded-lg shadow-md p-4">
             <img
               src={review.gameCover}
@@ -218,6 +220,7 @@ const AllReviews = () => {
               Explore Details
             </Link>
           </div>
+          </Fade>
         ))}
       </div>
     </div>

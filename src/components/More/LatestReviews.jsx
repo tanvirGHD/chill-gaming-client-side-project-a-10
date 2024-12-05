@@ -2,9 +2,9 @@
 import React from "react";
 
 const latestReviews = [
-  { title: "Amazing Action RPG", rating: "4.5/5", imageUrl: "https://images.pexels.com/photos/1234570/pexels-photo-1234570.jpeg" },
-  { title: "Sports Simulation", rating: "3.8/5", imageUrl: "https://images.pexels.com/photos/1234571/pexels-photo-1234571.jpeg" },
-  { title: "Puzzle Game", rating: "5/5", imageUrl: "https://images.pexels.com/photos/1234572/pexels-photo-1234572.jpeg" },
+  { title: "Amazing Action RPG", rating: "4.5/5", imageUrl: "https://i.ibb.co.com/2WFR5jy/4.jpg" },
+  { title: "Sports Simulation", rating: "3.8/5", imageUrl: "https://i.ibb.co.com/dPxL80t/5.jpg" },
+  { title: "Puzzle Game", rating: "5/5", imageUrl: "https://i.ibb.co.com/NFyjf2H/6.jpg" },
 ];
 
 const LatestReviews = () => {

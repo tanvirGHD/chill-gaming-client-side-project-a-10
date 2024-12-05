@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link, useLoaderData } from "react-router-dom"; // If you're using react-router loader
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const [color, setColor] = useState("text-pink-600");
@@ -20,7 +21,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="p-5">
+    <div className="bg-pink-100 p-5">
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <img
@@ -106,6 +107,7 @@ const Home = () => {
               {" "}
               {/* Ensure the grid container wraps all reviews */}
               {reviews.map((review) => (
+                <Fade key={review._id} direction="up" cascade>
                 <div
                   key={review._id}
                   className="bg-white rounded-lg shadow-md p-4 mb-6"
@@ -135,6 +137,7 @@ const Home = () => {
                     Explore Details
                   </Link>
                 </div>
+                </Fade>
               ))}
             </div>
           ) : (
