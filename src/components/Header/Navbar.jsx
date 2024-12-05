@@ -90,11 +90,20 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <h2>{user && user.email}</h2>
+        
         {user ? (
+          <div  className="flex items-center gap-3">
+          
+          <img
+          src={user.photoURL}
+          alt="User Avatar"
+          className="w-10 h-10 rounded-full"
+        />
+        <span className="font-medium">{user.displayName || user.displayName}</span>
           <button onClick={handleLogout} className="btn">
             Logout
           </button>
+          </div>
         ) : (
           <>
             <Link to="login" className="btn">

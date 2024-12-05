@@ -39,10 +39,9 @@ const AddReview = () => {
           })
         }
     })
-
-
-
   }
+
+
 
   return (
     <div class="bg-pink-100 min-h-screen flex items-center justify-center">
@@ -64,7 +63,7 @@ const AddReview = () => {
           />
         </div>
 
-        {/* <!-- Game Title এবং Publishing Year (Side by Side) --> */}
+        {/* <!-- Game Title and Publishing Year (Side by Side) --> */}
         <div class="flex gap-4 mb-4">
           {/* <!-- Game Title --> */}
           <div class="flex-1">
@@ -82,20 +81,34 @@ const AddReview = () => {
 
           {/* <!-- Publishing Year --> */}
           <div class="flex-1">
-            <label class="block text-pink-500 font-medium mb-1">
-              Publishing Year
-            </label>
-            <input
-              type="number"
-              name="publishingYear"
-              class="w-full border border-pink-300 rounded p-2"
-              placeholder="Enter publishing year"
-              required
-            />
-          </div>
+        <label class="block text-pink-500 font-medium mb-1">
+          Publishing Year
+        </label>
+        <select
+          name="publishingYear"
+          class="w-full border border-pink-300 rounded p-2"
+          required
+        >
+          <option value="" disabled selected>Select a year</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option> 
+          <option value="2021">2020</option> 
+          <option value="2021">2019</option> 
+          <option value="2021">2018</option> 
+          <option value="2021">2017</option> 
+          <option value="2021">2016</option> 
+          <option value="2021">2015</option> 
+          <option value="2021">2014</option> 
+          <option value="2021">2013</option> 
+          <option value="2021">2012</option> 
+        </select>
+      </div>
+
         </div>
 
-        {/* <!-- Review Description এবং Rating (Side by Side) --> */}
+        {/* <!-- Review Description AND Rating (Side by Side) --> */}
         <div class="flex gap-4 mb-4">
           {/* <!-- Review Description --> */}
           <div class="flex-1">
@@ -128,7 +141,7 @@ const AddReview = () => {
           </div>
         </div>
 
-        {/* <!-- Genre এবং User Email (Side by Side) --> */}
+        {/* <!-- Genre  User Email (Side by Side) --> */}
         <div class="flex gap-4 mb-4">
           {/* <!-- Genre --> */}
           <div class="flex-1">
