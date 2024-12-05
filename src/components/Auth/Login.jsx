@@ -291,7 +291,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center md:py-52 bg-gray-100">
+    <div className="flex items-center justify-center md:py-52 bg-pink-100">
       <div className="card bg-white w-full max-w-sm shadow-2xl rounded-lg">
         <h2 className="text-3xl font-bold text-gray-700 text-center pt-3">
           Login

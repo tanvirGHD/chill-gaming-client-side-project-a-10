@@ -1,6 +1,8 @@
+
 import Swal from 'sweetalert2'
 
 const AddReview = () => {
+  
 
   const handleAddReview = event => {
     event.preventDefault();
@@ -33,10 +35,11 @@ const AddReview = () => {
         if(data.insertedId){
           Swal.fire({
             title: 'Success',
-            text: 'User Added Successfully',
+            text: 'Review Added Successfully',
             icon: 'success',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Ok'
           })
+          
         }
     })
   }

@@ -115,13 +115,14 @@
 
 
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
 
+  //Delete 
   const handelUserDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -154,9 +155,12 @@ const MyReviews = () => {
     });
   };
 
+  //update
+
+
   return (
-    <div>
-      <h2 className="text-center text-3xl">My Reviews: {reviews.length}</h2>
+    <div className="bg-pink-100 h-screen">
+      <h2 className="font-bold p-3 text-3xl">My Reviews</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* Table Header */}
@@ -193,6 +197,7 @@ const MyReviews = () => {
                 <td>{review.gameTitle}</td>
                 <td>{review.rating}</td>
                 <td>
+                  <Link to={`/updateReview/${review._id}`}>
                   <button>
                     <img
                       className="h-10 w-10"
@@ -200,6 +205,7 @@ const MyReviews = () => {
                       alt=""
                     />
                   </button>
+                  </Link>
                   <button onClick={() => handelUserDelete(review._id)}>
                     <img
                       className="h-10 w-10"
