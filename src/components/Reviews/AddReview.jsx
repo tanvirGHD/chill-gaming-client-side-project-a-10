@@ -1,8 +1,10 @@
 
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const AddReview = () => {
-  
+
+  const navigate = useNavigate();
 
   const handleAddReview = event => {
     event.preventDefault();
@@ -39,12 +41,12 @@ const AddReview = () => {
             icon: 'success',
             confirmButtonText: 'Ok'
           })
-          
+          .then(() => {
+                    navigate("/allReviews"); 
+                  });
         }
     })
   }
-
-
 
   return (
     <div class="bg-pink-100 min-h-screen flex items-center justify-center">

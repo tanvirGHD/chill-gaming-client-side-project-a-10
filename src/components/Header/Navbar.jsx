@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+
+
+import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  
+  // State to manage the dropdown visibility
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -18,26 +24,32 @@ const Navbar = () => {
       <li>
         <NavLink to="/allReviews">All Reviews</NavLink>
       </li>
-      <div className="dropdown dropdown-hover">
+      <div className="dropdown">
         <li>
-        <button className="hover:bg-black hover:text-white" tabIndex={0} role="button" >
-          More 
-        </button>
+          <button
+            className="hover:bg-black hover:text-white"
+            tabIndex={0}
+            role="button"
+            onClick={() => setDropdownOpen(!isDropdownOpen)} // Toggle dropdown visibility
+          >
+            More
+          </button>
         </li>
-        <ul
-          tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
-        >
-          <li>
-            <NavLink to="/upcomingGames">Upcoming Games</NavLink>
-          </li>
-          <li>
-            <NavLink to="/latestReviews">Latest Reviews</NavLink>
-          </li>
-          <li>
-            <NavLink to="/popularGames">Popular Games</NavLink>
-          </li>
-        </ul>
+        {isDropdownOpen && (
+          <ul
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+          >
+            <li>
+              <NavLink to="/upcomingGames">Upcoming Games</NavLink>
+            </li>
+            <li>
+              <NavLink to="/latestReviews">Latest Reviews</NavLink>
+            </li>
+            <li>
+              <NavLink to="/popularGames">Popular Games</NavLink>
+            </li>
+          </ul>
+        )}
       </div>
 
       {user && (
@@ -78,7 +90,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
           >
             {links}
           </ul>
@@ -90,19 +102,17 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        
         {user ? (
-          <div  className="flex items-center gap-3">
-          
-          <img
-          src={user.photoURL}
-          alt="User Avatar"
-          className="w-10 h-10 rounded-full"
-        />
-        <span className="font-medium">{user.displayName || user.displayName}</span>
-          <button onClick={handleLogout} className="btn">
-            Logout
-          </button>
+          <div className="flex items-center gap-3">
+            <img
+              src={user.photoURL}
+              alt="User Avatar"
+              className="w-10 h-10 rounded-full"
+            />
+            <span className="font-medium">{user.displayName || user.displayName}</span>
+            <button onClick={handleLogout} className="btn">
+              Logout
+            </button>
           </div>
         ) : (
           <>
