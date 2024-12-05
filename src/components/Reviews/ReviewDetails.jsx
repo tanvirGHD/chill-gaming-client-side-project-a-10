@@ -42,11 +42,11 @@ const ReviewDetails = () => {
           <div className="text-center">
             <Link
               to="/watchList"
-              state={reviews} // Sending reviews data to WatchList component
+              state={reviews}
               className="flex items-center justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             >
               <FaBookmark className="h-5 w-5 mr-2" />
-              Add to Watchlist
+              Add to WatchList
             </Link>
           </div>
         </div>

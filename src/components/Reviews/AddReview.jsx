@@ -27,7 +27,7 @@ const AddReview = () => {
       email,
       text,
     };
-    console.log(newReview);
+
 
     // send data to the server
     fetch("http://localhost:5000/review", {
@@ -39,7 +39,6 @@ const AddReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
@@ -77,7 +76,7 @@ const AddReview = () => {
           />
         </div>
 
-        {/* <!-- Game Title and Publishing Year (Side by Side) --> */}
+        {/* Game Title and Publishing Year (Side by Side) */}
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           {/* <!-- Game Title --> */}
           <div class="flex-1">
@@ -93,7 +92,7 @@ const AddReview = () => {
             />
           </div>
 
-          {/* <!-- Publishing Year --> */}
+          {/* Publishing Year */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">
               Publishing Year
@@ -123,9 +122,9 @@ const AddReview = () => {
           </div>
         </div>
 
-        {/* <!-- Review Description AND Rating (Side by Side) --> */}
+        {/* Review Description AND Rating (Side by Side) */}
         <div class="flex flex-col md:flex-row gap-4 mb-4">
-          {/* <!-- Review Description --> */}
+          {/* Review Description */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">
               Review Description
@@ -139,7 +138,7 @@ const AddReview = () => {
             ></textarea>
           </div>
 
-          {/* <!-- Rating --> */}
+          {/* Rating */}
           <div class="w-3/5 ml-2">
             <label class="block text-pink-500 font-medium mb-1">
               Rating (1-5)
@@ -156,7 +155,7 @@ const AddReview = () => {
           </div>
         </div>
 
-        {/* <!-- Genre  User Email (Side by Side) --> */}
+        {/* Genre User Email (Side by Side)*/}
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           {/* <!-- Genre --> */}
           <div class="flex-1">
@@ -173,7 +172,7 @@ const AddReview = () => {
             </select>
           </div>
 
-          {/* <!-- User Email --> */}
+          {/* User Email */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">
               User Email
@@ -188,7 +187,7 @@ const AddReview = () => {
           </div>
         </div>
 
-        {/* <!-- User Name --> */}
+        {/* User Name */}
         <div class="mb-4">
           <label class="block text-pink-500 font-medium mb-1">User Name</label>
           <input
@@ -200,7 +199,7 @@ const AddReview = () => {
           />
         </div>
 
-        {/* <!-- Submit Button --> */}
+        {/* Submit Button*/}
         <input
           type="submit"
           value="Submit Review"

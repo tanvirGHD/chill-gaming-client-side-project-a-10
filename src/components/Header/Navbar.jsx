@@ -30,7 +30,7 @@ const Navbar = () => {
             className="hover:bg-black hover:text-white"
             tabIndex={0}
             role="button"
-            onClick={() => setDropdownOpen(!isDropdownOpen)} // Toggle dropdown visibility
+            onClick={() => setDropdownOpen(!isDropdownOpen)} 
           >
             More
           </button>

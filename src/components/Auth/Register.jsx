@@ -37,7 +37,6 @@ const Register = () => {
 
     createNewUser(email, password)
       .then((result) => {
-        console.log("User created in Firebase", result.user);
         const user = result.user;
         setUser(user);
 
@@ -74,12 +73,10 @@ const Register = () => {
               });
           })
           .catch((err) => {
-            console.log("Error updating profile:", err);
             setError("Failed to update profile.");
           });
       })
       .catch((error) => {
-        console.log("Error during registration:", error.message);
         setError(error.message);
       });
   };

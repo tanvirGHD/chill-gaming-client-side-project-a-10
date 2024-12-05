@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 const UpdateReview = () => {
 const navigate = useNavigate();
   const reviews = useLoaderData();
-  console.log(reviews)
   const {_id, text, email, publishingYear,reviewDescription, gameTitle, gameCover,genre, rating } = reviews;
 
 
@@ -36,7 +35,6 @@ const navigate = useNavigate();
     })
     .then(res => res.json())
     .then(data=> {
-        console.log(data)
         if(data.modifiedCount){
           Swal.fire({
             title: 'Success',
