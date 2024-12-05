@@ -1,12 +1,10 @@
-
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddReview = () => {
-
   const navigate = useNavigate();
 
-  const handleAddReview = event => {
+  const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
 
@@ -19,38 +17,49 @@ const AddReview = () => {
     const email = form.email.value;
     const text = form.text.value;
 
-    const newReview = {gameCover, gameTitle, publishingYear, reviewDescription, rating, genre, email, text}
+    const newReview = {
+      gameCover,
+      gameTitle,
+      publishingYear,
+      reviewDescription,
+      rating,
+      genre,
+      email,
+      text,
+    };
     console.log(newReview);
 
-
     // send data to the server
-    fetch('http://localhost:5000/review',{
-      method: 'POST',
+    fetch("http://localhost:5000/review", {
+      method: "POST",
       headers: {
-        'content-type':'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(newReview)
+      body: JSON.stringify(newReview),
     })
-    .then(res => res.json())
-    .then(data=> {
-        console.log(data)
-        if(data.insertedId){
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
           Swal.fire({
-            title: 'Success',
-            text: 'Review Added Successfully',
-            icon: 'success',
-            confirmButtonText: 'Ok'
-          })
-          .then(() => {
-                    navigate("/allReviews"); 
-                  });
+            title: "Success",
+            text: "Review Added Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          }).then(() => {
+            navigate("/allReviews");
+          });
         }
-    })
-  }
+      });
+  };
 
   return (
+
     <div class="bg-pink-100 min-h-screen flex items-center justify-center">
-      <form onSubmit={handleAddReview} class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+      <form
+        onSubmit={handleAddReview}
+        class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl"
+      >
         <h2 class="text-pink-500 text-2xl font-bold mb-4 text-center">
           Add New Game Review
         </h2>
@@ -69,7 +78,7 @@ const AddReview = () => {
         </div>
 
         {/* <!-- Game Title and Publishing Year (Side by Side) --> */}
-        <div class="flex gap-4 mb-4">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
           {/* <!-- Game Title --> */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">
@@ -86,35 +95,36 @@ const AddReview = () => {
 
           {/* <!-- Publishing Year --> */}
           <div class="flex-1">
-        <label class="block text-pink-500 font-medium mb-1">
-          Publishing Year
-        </label>
-        <select
-          name="publishingYear"
-          class="w-full border border-pink-300 rounded p-2"
-          required
-        >
-          <option value="" disabled selected>Select a year</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option> 
-          <option value="2021">2020</option> 
-          <option value="2021">2019</option> 
-          <option value="2021">2018</option> 
-          <option value="2021">2017</option> 
-          <option value="2021">2016</option> 
-          <option value="2021">2015</option> 
-          <option value="2021">2014</option> 
-          <option value="2021">2013</option> 
-          <option value="2021">2012</option> 
-        </select>
-      </div>
-
+            <label class="block text-pink-500 font-medium mb-1">
+              Publishing Year
+            </label>
+            <select
+              name="publishingYear"
+              class="w-full border border-pink-300 rounded p-2"
+              required
+            >
+              <option value="" disabled selected>
+                Select a year
+              </option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+            </select>
+          </div>
         </div>
 
         {/* <!-- Review Description AND Rating (Side by Side) --> */}
-        <div class="flex gap-4 mb-4">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
           {/* <!-- Review Description --> */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">
@@ -147,7 +157,7 @@ const AddReview = () => {
         </div>
 
         {/* <!-- Genre  User Email (Side by Side) --> */}
-        <div class="flex gap-4 mb-4">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
           {/* <!-- Genre --> */}
           <div class="flex-1">
             <label class="block text-pink-500 font-medium mb-1">Genre</label>
@@ -189,12 +199,13 @@ const AddReview = () => {
             readonly
           />
         </div>
+
         {/* <!-- Submit Button --> */}
         <input
           type="submit"
           value="Submit Review"
           className="w-full bg-pink-500 text-white font-bold py-2 rounded hover:bg-pink-600"
-        ></input>
+        />
       </form>
     </div>
   );

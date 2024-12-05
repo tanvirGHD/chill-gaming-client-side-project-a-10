@@ -110,16 +110,16 @@ const Navbar = () => {
               className="w-10 h-10 rounded-full"
             />
             <span className="font-medium">{user.displayName || user.displayName}</span>
-            <button onClick={handleLogout} className="btn">
+            <button onClick={handleLogout} className="btn bg-pink-600 text-white">
               Logout
             </button>
           </div>
         ) : (
           <>
-            <Link to="login" className="btn">
+            <Link to="login" className="btn bg-pink-600 text-white">
               Login
             </Link>
-            <Link to="register" className="btn">
+            <Link to="register" className="btn bg-pink-600 text-white">
               Register
             </Link>
           </>

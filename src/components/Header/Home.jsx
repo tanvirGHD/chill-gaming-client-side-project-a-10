@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+
+
+import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import { Link, useLoaderData } from "react-router-dom"; // If you're using react-router loader
+import { Link, useLoaderData } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { FaMoon, FaSun } from "react-icons/fa"; // For light/dark toggle icons
 
 const Home = () => {
   const [color, setColor] = useState("text-pink-600");
-
-  // Fetching data in Home component using useLoaderData
+  const [theme, setTheme] = useState("light"); // "light" or "dark"
+  const [review, setReviews] = useState([]);
   const reviews = useLoaderData();
 
-  const [review, setReviews] = useState([]);
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,10 +26,20 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-pink-100 p-5">
+    <div className={`p-5 ${theme === "light" ? "bg-pink-100" : "bg-pink-200"}`}>
+      <div className="flex justify-end mb-4">
+        <button onClick={toggleTheme} className="text-2xl">
+          {theme === "light" ? (
+            <FaMoon className="text-yellow-500" />
+          ) : (
+            <FaSun className="text-yellow-500" />
+          )}
+        </button>
+      </div>
+
       <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
+         <div id="slide1" className="carousel-item relative w-full">
+           <img
             src="https://i.ibb.co.com/6w8zHgw/1.jpg"
             className="w-full md:h-[500px]"
           />
@@ -81,9 +96,8 @@ const Home = () => {
         </div>
       </div>
 
-      <h1
-        className={`text-3xl md:text-6xl font-bold ${color} mt-10 text-center`}
-      >
+
+      <h1 className={`text-3xl md:text-6xl font-bold ${color} mt-10 text-center`}>
         <Typewriter
           words={[
             "Welcome to the Game!",
@@ -99,18 +113,16 @@ const Home = () => {
         />
       </h1>
 
-      {/* Rendering the HighestRatedGames component with the fetched reviews data */}
       <div className="mt-16">
-        <div>
-          {reviews && reviews.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {" "}
-              {/* Ensure the grid container wraps all reviews */}
-              {reviews.map((review) => (
-                <Fade key={review._id} direction="up" cascade>
+        {reviews && reviews.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {reviews.map((review) => (
+              <Fade key={review._id} direction="up" cascade>
                 <div
                   key={review._id}
-                  className="bg-white rounded-lg shadow-md p-4 mb-6"
+                  className={`rounded-lg shadow-md p-4 mb-6 ${
+                    theme === "light" ? "bg-white" : "bg-gray-200"
+                  }`}
                 >
                   <img
                     src={review.gameCover}
@@ -137,13 +149,12 @@ const Home = () => {
                     Explore Details
                   </Link>
                 </div>
-                </Fade>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-gray-500">No reviews available.</p>
-          )}
-        </div>
+              </Fade>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-500">No reviews available.</p>
+        )}
       </div>
     </div>
   );
