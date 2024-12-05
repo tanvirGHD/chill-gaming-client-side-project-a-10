@@ -18,6 +18,8 @@ import UpcomingGames from "./components/More/UpcomingGames.jsx";
 import PopularGames from "./components/More/PopularGames.jsx";
 import LatestReviews from "./components/More/LatestReviews.jsx";
 import Error from "./components/error/Error.jsx";
+import Footer from "./components/footer/Footer.jsx";
+// import HighestRatedGames from "./components/highRatGame/HighestRatedGames.jsx";
 
 
 
@@ -29,13 +31,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/review')
       },
       {
         path: 'allReviews',
         element: <AllReviews></AllReviews>,
         loader: () => fetch('http://localhost:5000/review')
       },
+      // {
+      //   path:'highestRatedGames',
+      //   element: <HighestRatedGames></HighestRatedGames>
+      // },
       { path: "login",
         element: <Login></Login>
       },
@@ -78,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: '/popularGames',
         element:<PopularGames></PopularGames>
+      },
+      {
+        path:'/footer',
+        element: <Footer></Footer>
       },
       {
         path:'*',

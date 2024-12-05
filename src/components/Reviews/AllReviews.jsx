@@ -100,6 +100,8 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllReviews = () => {
   const reviews = useLoaderData();
+
+  
   const [selectedGenre, setSelectedGenre] = useState(""); 
   const [sortOption, setSortOption] = useState(""); 
 
