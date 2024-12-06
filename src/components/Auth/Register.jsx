@@ -46,7 +46,7 @@ const Register = () => {
             const newUser = { name, email, photo };
 
             // Save new user info to DB
-            fetch("https://assignment-10-server-side-neon.vercel.app/users", {
+            fetch("https://assignment-10-server-side-eta-eight.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

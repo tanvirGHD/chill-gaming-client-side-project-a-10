@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "chill-gamer-project"
-  }
+  },
+  "targets": {
+    "chill-gamer-project": {
+      "hosting": {
+        "myhosting": [
+          "chill-gamer-project"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

@@ -30,7 +30,7 @@ const AddReview = () => {
 
 
     // send data to the server
-    fetch("https://assignment-10-server-side-neon.vercel.app/review", {
+    fetch("https://assignment-10-server-side-eta-eight.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

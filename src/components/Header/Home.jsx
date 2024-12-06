@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link, useLoaderData } from "react-router-dom";
@@ -9,9 +7,8 @@ import { FaMoon, FaSun } from "react-icons/fa"; // For light/dark toggle icons
 const Home = () => {
   const [color, setColor] = useState("text-pink-600");
   const [theme, setTheme] = useState("light"); // "light" or "dark"
-  const [review, setReviews] = useState([]);
   const reviews = useLoaderData();
-
+  console.log(reviews)
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
@@ -38,9 +35,9 @@ const Home = () => {
       </div>
 
       <div className="carousel w-full">
-         <div id="slide1" className="carousel-item relative w-full">
-           <img
-            src="https://i.ibb.co.com/6w8zHgw/1.jpg"
+        <div id="slide1" className="carousel-item relative w-full">
+          <img
+            src="https://i.ibb.co/6w8zHgw/1.jpg"
             className="w-full md:h-[500px]"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -54,7 +51,7 @@ const Home = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co.com/Gs4MHDY/2.jpg"
+            src="https://i.ibb.co/Gs4MHDY/2.jpg"
             className="w-full md:h-[500px]"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -68,7 +65,7 @@ const Home = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co.com/0XVd7X5/3.jpg"
+            src="https://i.ibb.co/0XVd7X5/3.jpg"
             className="w-full md:h-[500px]"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -82,7 +79,7 @@ const Home = () => {
         </div>
         <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co.com/64vTy5G/side-view-gamer-sitting-chair.jpg"
+            src="https://i.ibb.co/64vTy5G/side-view-gamer-sitting-chair.jpg"
             className="w-full md:h-[500px]"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -95,7 +92,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
 
       <h1 className={`text-3xl md:text-6xl font-bold ${color} mt-10 text-center`}>
         <Typewriter
