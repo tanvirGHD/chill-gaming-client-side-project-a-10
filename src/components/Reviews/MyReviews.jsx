@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 const MyReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
@@ -54,7 +55,7 @@ const MyReviews = () => {
               <th>#</th>
               <th>Photo</th>
               <th>Name</th>
-              <th>Email</th>
+              <th>Review</th>
               <th>GameTitle</th>
               <th>Rating</th>
               <th>Action</th>
@@ -78,7 +79,7 @@ const MyReviews = () => {
                   </div>
                 </td>
                 <td>{review.text}</td>
-                <td>{review.email}</td>
+                <td>{review.reviewDescription}</td>
                 <td>{review.gameTitle}</td>
                 <td>{review.rating}</td>
                 <td>
@@ -109,3 +110,12 @@ const MyReviews = () => {
 };
 
 export default MyReviews;
+
+
+
+
+
+
+
+
+

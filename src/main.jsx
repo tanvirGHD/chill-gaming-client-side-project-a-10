@@ -64,9 +64,9 @@ const router = createBrowserRouter([
         loader: ()=> fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
       },
       {
-        path:'/watchList/:id',
+        path:'/watchList/',
         element:<PrivateRoute><WatchList></WatchList></PrivateRoute>,
-        loader: ({params})=> fetch(`https://assignment-10-server-side-eta-eight.vercel.app/review/${params.id}`)
+        loader:  ()=> fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
         
       },
       {

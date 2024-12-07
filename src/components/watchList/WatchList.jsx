@@ -1,20 +1,30 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+
+
+import React, { useState, useEffect } from "react";
 
 const WatchList = () => {
-  const location = useLocation();
-  const reviews = location.state; // Receiving reviews data
+  const [watchlist, setWatchlist] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  if (!reviews) {
-    return (
-      <div className="p-6 text-center">
-        <h2 className="text-xl text-red-500">No items in your WatchList yet.</h2>
-      </div>
-    );
+  useEffect(() => {
+
+    setTimeout(() => {
+      const savedWatchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+      setWatchlist(savedWatchlist);
+      setLoading(false); 
+    }, 1000); 
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
+
+  if (watchlist.length === 0) {
+    return <div>No items in your WatchList yet.</div>;
   }
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-6 max-w-4xl mx-auto h-screen">
       <h2 className="text-2xl font-bold mb-4">My WatchList</h2>
       <table className="table-auto w-full border-collapse border border-gray-300">
         <thead>
@@ -27,27 +37,21 @@ const WatchList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border border-gray-300 px-4 py-2">
-              <img
-                src={reviews.gameCover}
-                alt={reviews.gameTitle}
-                className="h-16 w-16 object-cover"
-              />
-            </td>
-            <td className="border border-gray-300 px-4 py-2">
-              {reviews.gameTitle}
-            </td>
-            <td className="border border-gray-300 px-4 py-2">
-              {reviews.publishingYear}
-            </td>
-            <td className="border border-gray-300 px-4 py-2">
-              {reviews.rating}
-            </td>
-            <td className="border border-gray-300 px-4 py-2">
-              {reviews.genre}
-            </td>
-          </tr>
+          {watchlist.map((game, index) => (
+            <tr key={index}>
+              <td className="border border-gray-300 px-4 py-2">
+                <img
+                  src={game.gameCover}
+                  alt={game.gameTitle}
+                  className="h-16 w-16 object-cover"
+                />
+              </td>
+              <td className="border border-gray-300 px-4 py-2">{game.gameTitle}</td>
+              <td className="border border-gray-300 px-4 py-2">{game.publishingYear}</td>
+              <td className="border border-gray-300 px-4 py-2">{game.rating}</td>
+              <td className="border border-gray-300 px-4 py-2">{game.genre}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

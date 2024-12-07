@@ -28,7 +28,6 @@ const AddReview = () => {
       text,
     };
 
-
     // send data to the server
     fetch("https://assignment-10-server-side-eta-eight.vercel.app/review", {
       method: "POST",
@@ -53,7 +52,6 @@ const AddReview = () => {
   };
 
   return (
-
     <div class="bg-pink-100 min-h-screen flex items-center justify-center">
       <form
         onSubmit={handleAddReview}
@@ -93,32 +91,38 @@ const AddReview = () => {
           </div>
 
           {/* Publishing Year */}
-          <div class="flex-1">
-            <label class="block text-pink-500 font-medium mb-1">
+          <div className="flex-1">
+            <label className="block text-pink-500 font-medium mb-1">
               Publishing Year
             </label>
-            <select
-              name="publishingYear"
-              class="w-full border border-pink-300 rounded p-2"
-              required
-            >
-              <option value="" disabled selected>
-                Select a year
-              </option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-              <option value="2019">2019</option>
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
-              <option value="2016">2016</option>
-              <option value="2015">2015</option>
-              <option value="2014">2014</option>
-              <option value="2013">2013</option>
-              <option value="2012">2012</option>
-            </select>
+            <div className="flex space-x-2">
+              <select
+                name="publishingYear"
+                className="w-full border border-pink-300 rounded p-2"
+                required
+              >
+                <option value="" disabled>
+                  Select a year
+                </option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+              </select>
+
+              <input
+                type="text"
+                name="customYear"
+                placeholder="Or enter year"
+                className="w-full border border-pink-300 rounded p-2"
+              />
+            </div>
           </div>
         </div>
 
