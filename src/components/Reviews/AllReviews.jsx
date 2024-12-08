@@ -36,7 +36,7 @@ const AllReviews = () => {
     } else if (sortOption === "yearDesc") {
       return b.publishingYear - a.publishingYear; // Sort by year descending
     }
-    return 0; // Default: no sorting
+    return 0; 
   });
 
   if (!sortedReviews || sortedReviews.length === 0) {
@@ -132,3 +132,15 @@ const AllReviews = () => {
 };
 
 export default AllReviews;
+
+
+
+
+
+
+
+
+
+
+
+

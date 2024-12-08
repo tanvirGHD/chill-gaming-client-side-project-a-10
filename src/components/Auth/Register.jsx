@@ -1,10 +1,7 @@
-
-
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
-
 
 const Register = () => {
   const { createNewUser, manageProfile, setUser } = useContext(AuthContext);
@@ -34,7 +31,6 @@ const Register = () => {
       return;
     }
 
-
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -63,7 +59,7 @@ const Register = () => {
                     icon: "success",
                     confirmButtonText: "Ok",
                   }).then(() => {
-                    navigate("/"); 
+                    navigate("/");
                   });
                 }
               })
@@ -171,3 +167,5 @@ const Register = () => {
 };
 
 export default Register;
+
+

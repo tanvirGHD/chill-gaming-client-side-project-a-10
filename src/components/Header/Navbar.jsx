@@ -3,14 +3,14 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
-  
-  // State to manage the dropdown visibility
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  
+
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -24,21 +24,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/allReviews">All Reviews</NavLink>
       </li>
-      <div className="dropdown">
-        <li>
-          <button
-            className="hover:bg-black hover:text-white"
-            tabIndex={0}
-            role="button"
-            onClick={() => setDropdownOpen(!isDropdownOpen)} 
-          >
-            More
-          </button>
-        </li>
+      <li className="relative">
+        <button
+          className="hover:bg-black hover:text-white px-2 pt-2 rounded-md"
+          tabIndex={0}
+          onClick={() => setDropdownOpen(!isDropdownOpen)}
+        >
+          More
+        </button>
         {isDropdownOpen && (
-          <ul
-            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
-          >
+          <ul className="dropdown-content absolute menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow top-full mt-2 left-0">
             <li>
               <NavLink to="/upcomingGames">Upcoming Games</NavLink>
             </li>
@@ -50,7 +45,7 @@ const Navbar = () => {
             </li>
           </ul>
         )}
-      </div>
+      </li>
 
       {user && (
         <>
@@ -65,17 +60,21 @@ const Navbar = () => {
           </li>
         </>
       )}
-      </>
+    </>
   );
 
   return (
     <div className="navbar bg-pink-100 sticky z-50 top-0 backdrop-blur bg-opacity-10">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div className="navbar-start flex items-center gap-4">
+        <div className="dropdown lg:hidden">
+          <button
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -87,7 +86,7 @@ const Navbar = () => {
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
-          </div>
+          </button>
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
@@ -95,34 +94,48 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className=" btn-ghost text-lg font-bold text-pink-600 md:text-3xl">Chill Gamer</a>
+        <a className=" text-lg font-bold text-pink-600 md:text-3xl">
+          Chill Gamer
+        </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+      <div className="navbar-center hidden lg:flex flex-grow">
+        <ul className="menu menu-horizontal px-1 flex gap-4">{links}</ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end flex items-center gap-4">
         {user ? (
           <div className="flex items-center gap-3">
             <img
               src={user.photoURL}
               alt="User Avatar"
               className="w-10 h-10 rounded-full"
+              data-tooltip-id="user-tooltip"
             />
-            <span className="font-medium">{user.displayName || user.displayName}</span>
-            <button onClick={handleLogout} className="btn bg-pink-600 text-white">
+            <Tooltip id="user-tooltip" place="top">
+              {user.displayName || "Guest"}
+            </Tooltip>
+            <button
+              onClick={handleLogout}
+              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+            >
               Logout
             </button>
           </div>
         ) : (
-          <>
-            <Link to="login" className="btn bg-pink-600 text-white">
+          <div className="flex items-center gap-2">
+            <Link
+              to="login"
+              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+            >
               Login
             </Link>
-            <Link to="register" className="btn bg-pink-600 text-white">
+            <Link
+              to="register"
+              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+            >
               Register
             </Link>
-          </>
+          </div>
         )}
       </div>
     </div>

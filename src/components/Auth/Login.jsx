@@ -25,7 +25,7 @@ const Login = () => {
           icon: "success",
           confirmButtonText: "Ok",
         }).then(() => {
-          navigate("/"); // Navigate to home page
+          navigate("/");
         });
       })
       .catch(() => {
@@ -42,7 +42,7 @@ const Login = () => {
   const handleGoogleLoginClick = () => {
     handleGoogleLogin()
       .then(() => {
-        navigate("/"); // Navigate to home page after successful Google login
+        navigate("/"); 
       })
       .catch((error) => {
         Swal.fire({

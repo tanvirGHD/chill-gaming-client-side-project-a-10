@@ -4,7 +4,6 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout.jsx";
 import Home from "./components/Header/Home.jsx";
-import AllReviews from "./components/Reviews/Allreviews.jsx";
 import Login from "./components/Auth/Login.jsx";
 import Register from "./components/Auth/Register.jsx";
 import AddReview from "./components/Reviews/AddReview.jsx";
@@ -19,7 +18,8 @@ import PopularGames from "./components/More/PopularGames.jsx";
 import LatestReviews from "./components/More/LatestReviews.jsx";
 import Error from "./components/error/Error.jsx";
 import Footer from "./components/footer/Footer.jsx";
-// import HighestRatedGames from "./components/highRatGame/HighestRatedGames.jsx";
+import AllReviews from "./components/Reviews/AllReviews.jsx";
+
 
 
 
@@ -39,14 +39,11 @@ const router = createBrowserRouter([
         element: <AllReviews></AllReviews>,
         loader: () => fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
       },
-      // {
-      //   path:'highestRatedGames',
-      //   element: <HighestRatedGames></HighestRatedGames>
-      // },
       { path: "login",
         element: <Login></Login>
       },
-      { path: "register",
+      { 
+        path: "register",
         element: <Register></Register>
       },
       {
