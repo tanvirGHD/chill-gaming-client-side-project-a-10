@@ -4,7 +4,7 @@ Welcome to **Chill Gamer**, your ultimate destination for exploring gaming revie
 
 ## Live Site
 
-You can check out the live site here: [Chill Gamer Live](https://your-live-site-url.com)
+You can check out the live site here: [Chill Gamer Live](https://chill-gamer-project.web.app/)
 
 ## Features
 

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link, useLoaderData } from "react-router-dom";
@@ -54,31 +55,27 @@ const Home = () => {
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/6w8zHgw/1.jpg"
-            className="w-full md:h-[500px]"
+            src="/img/1.jpg"
+            className="w-full md:h-[500px] object-cover"
             alt="Slide 1"
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
             <a href="#slide4" className="btn btn-circle">
               ❮
             </a>
             <a href="#slide2" className="btn btn-circle">
               ❯
             </a>
-          </div>
-          {/* Text Overlay */}
-          <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-pink-600 text-4xl font-bold">
-            Mining Full, Reach New Heights
           </div>
         </div>
 
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/Gs4MHDY/2.jpg"
-            className="w-full md:h-[500px]"
+            src="/img/10.jpg"
+            className="w-full md:h-[500px] object-cover"
             alt="Slide 2"
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
             <a href="#slide1" className="btn btn-circle">
               ❮
             </a>
@@ -86,19 +83,15 @@ const Home = () => {
               ❯
             </a>
           </div>
-          {/* Text Overlay */}
-          <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-pink-600 text-4xl font-bold">
-            Unleash the Power of Mining
-          </div>
         </div>
 
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/0XVd7X5/3.jpg"
-            className="w-full md:h-[500px]"
+            src="/img/4.jpg"
+            className="w-full md:h-[500px] object-cover"
             alt="Slide 3"
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
             <a href="#slide2" className="btn btn-circle">
               ❮
             </a>
@@ -106,29 +99,21 @@ const Home = () => {
               ❯
             </a>
           </div>
-          {/* Text Overlay */}
-          <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-pink-600 text-4xl font-bold">
-            Explore the Future of Mining
-          </div>
         </div>
 
         <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/64vTy5G/side-view-gamer-sitting-chair.jpg"
-            className="w-full md:h-[500px]"
+            src="/img/5.jpg"
+            className="w-full md:h-[500px] object-cover"
             alt="Slide 4"
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
             <a href="#slide3" className="btn btn-circle">
               ❮
             </a>
             <a href="#slide1" className="btn btn-circle">
               ❯
             </a>
-          </div>
-          {/* Text Overlay */}
-          <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-pink-600 text-4xl font-bold">
-            Join the Mining Revolution
           </div>
         </div>
       </div>

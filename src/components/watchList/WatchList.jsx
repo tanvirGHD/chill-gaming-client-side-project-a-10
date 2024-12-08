@@ -25,7 +25,7 @@ const WatchList = () => {
       confirmButtonText: "Yes, delete it!",
       cancelButtonText: "Cancel",
       confirmButtonColor: "#d33", 
-      cancelButtonColor: "#3085d6", l
+      cancelButtonColor: "#3085d6", // Removed the extra 'l'
     }).then((result) => {
       if (result.isConfirmed) {
         // If confirmed, remove the game from watchlist
