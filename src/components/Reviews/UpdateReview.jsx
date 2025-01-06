@@ -68,10 +68,10 @@ const UpdateReview = () => {
   };
 
   return (
-    <div className="bg-pink-100 min-h-screen flex items-center justify-center">
+    <div className=" min-h-screen flex items-center justify-center">
       <form
         onSubmit={handleUpdateReview}
-        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl"
+        className="border dark:bg-[#161b3d] p-8 rounded-lg shadow-lg w-full max-w-2xl"
       >
         <h2 className="text-pink-500 text-2xl font-bold mb-4 text-center">
           Update Review : {gameTitle}
@@ -84,7 +84,7 @@ const UpdateReview = () => {
             type="url"
             name="gameCover"
             defaultValue={gameCover}
-            className="w-full border border-pink-300 rounded p-2"
+            className="w-full text-black  border border-pink-300 rounded p-2"
             placeholder="Enter cover image URL"
             required
           />
@@ -100,7 +100,7 @@ const UpdateReview = () => {
               type="text"
               name="gameTitle"
               defaultValue={gameTitle}
-              className="w-full border border-pink-300 rounded p-2"
+              className="w-full text-black border border-pink-300 rounded p-2"
               placeholder="Enter game title"
               required
             />
@@ -113,7 +113,7 @@ const UpdateReview = () => {
               <select
                 name="publishingYear"
                 defaultValue={publishingYear}
-                className="w-full border border-pink-300 rounded p-2"
+                className="w-full text-black  border border-pink-300 rounded p-2"
                 required
               >
                 <option value="" disabled>
@@ -152,8 +152,8 @@ const UpdateReview = () => {
             <textarea
               name="reviewDescription"
               defaultValue={reviewDescription}
-              className="w-full border border-pink-300 rounded p-2"
-              placeholder="Write your detailed review"
+              className="w-full border text-black  border-pink-300 rounded p-2"
+              placeholder="Write your text-black  detailed review"
               rows="4"
               required
             ></textarea>
@@ -166,7 +166,7 @@ const UpdateReview = () => {
               type="number"
               name="rating"
               defaultValue={rating}
-              className="w-full border border-pink-300 rounded p-2"
+              className="w-full text-black  border border-pink-300 rounded p-2"
               placeholder="Enter rating (1-5)"
               min="1"
               max="5"
@@ -184,7 +184,7 @@ const UpdateReview = () => {
             <select
               name="genre"
               defaultValue={genre}
-              className="w-full border border-pink-300 rounded p-2"
+              className="w-full border text-black  border-pink-300 rounded p-2"
               required
             >
               <option value="">Select Genre</option>
@@ -201,7 +201,7 @@ const UpdateReview = () => {
               type="email"
               name="email"
               defaultValue={email}
-              className="w-full border border-pink-300 rounded p-2 bg-gray-100"
+              className="w-full border text-black  border-pink-300 rounded p-2 bg-gray-100"
               placeholder="User email"
               required
             />
@@ -217,7 +217,7 @@ const UpdateReview = () => {
             type="text"
             name="name"
             defaultValue={text}
-            className="w-full border border-pink-300 rounded p-2 bg-gray-100"
+            className="w-full border text-black  border-pink-300 rounded p-2 bg-gray-100"
             placeholder="User name"
             required
           />

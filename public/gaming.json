@@ -1,0 +1,82 @@
+{
+  "topRatedGames": [
+    {
+      "id": 1,
+      "name": "Space Adventure",
+      "category": "Adventure",
+      "price": "$29.99",
+      "rating": 4.8,
+      "description": "Embark on an intergalactic journey through the cosmos.",
+      "image": "https://i.ibb.co.com/yRXR2Y0/pexels-sebastian-411207.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Zombie Apocalypse",
+      "category": "Action",
+      "price": "$19.99",
+      "rating": 4.7,
+      "description": "Survive a world overrun by zombies in this action-packed game.",
+      "image": "https://i.ibb.co.com/9cCSJrb/pexels-thepaintedsquare-3391378.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Racing Rivals",
+      "category": "Racing",
+      "price": "$24.99",
+      "rating": 4.9,
+      "description": "Race against the best in this thrilling racing game.",
+      "image": "https://i.ibb.co.com/V3jZJv8/pexels-anton-porsche-37909-133579.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Space Quest",
+      "category": "Adventure",
+      "price": "$29.99",
+      "rating": 4.5,
+      "description": "Discover new planets in this thrilling space exploration game.",
+      "image": "https://i.ibb.co.com/48xzkPb/pexels-pixabay-260024.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Battle Royale",
+      "category": "Action",
+      "price": "$49.99",
+      "rating": 4.7,
+      "description": "Fight for survival in a massive online battle.",
+      "image": "https://i.ibb.co.com/cwVzwfJ/pexels-kowalievska-1174746.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Speed Chase",
+      "category": "Racing",
+      "price": "$34.99",
+      "rating": 4.8,
+      "description": "Chase your rivals in an adrenaline-pumping racing adventure.",
+      "image": "https://i.ibb.co.com/wgnBrqH/pexels-pixabay-163036.jpg"
+    }
+  ],
+  "categories": {
+    "Adventure": [
+      {
+        "id": 7,
+        "name": "Mystic Quest",
+        "category": "Adventure",
+        "price": "$39.99",
+        "rating": 4.6,
+        "description": "Uncover the secrets of the ancient world.",
+        "image": "https://i.ibb.co.com/48xzkPb/pexels-pixabay-260024.jpg"
+      }
+    ],
+    "Action": [
+      {
+        "id": 8,
+        "name": "City Battle",
+        "category": "Action",
+        "price": "$39.99",
+        "rating": 4.8,
+        "description": "Battle across the city in a fast-paced combat game.",
+        "image": "https://i.ibb.co.com/cwVzwfJ/pexels-kowalievska-1174746.jpg"
+      }
+    ]
+  }
+}

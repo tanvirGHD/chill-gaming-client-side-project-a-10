@@ -59,7 +59,7 @@ const WatchList = () => {
       <div className="overflow-x-auto">
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className="">
               <th className="border border-gray-300 px-4 py-2">Game Cover</th>
               <th className="border border-gray-300 px-4 py-2">Game Title</th>
               <th className="border border-gray-300 px-4 py-2">Publishing Year</th>
@@ -70,7 +70,7 @@ const WatchList = () => {
           </thead>
           <tbody>
             {watchlist.map((game, index) => (
-              <tr key={index} className="hover:bg-gray-100">
+              <tr key={index} className="hover:bg-[#2D3047]">
                 <td className="border border-gray-300 px-4 py-2 text-center">
                   <img
                     src={game.gameCover}

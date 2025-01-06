@@ -1,14 +1,14 @@
-
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import loginLottieData from "../../assets/Animation - 1736180117426.json";
+import Lottie from "lottie-react";
 
 const Login = () => {
   const { userLogin, handleGoogleLogin, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Handle login form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -38,11 +38,10 @@ const Login = () => {
       });
   };
 
-  // Handle Google login
   const handleGoogleLoginClick = () => {
     handleGoogleLogin()
       .then(() => {
-        navigate("/"); 
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
@@ -55,16 +54,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center md:py-52 bg-pink-100">
-      <div className="card bg-white w-full max-w-sm shadow-2xl rounded-lg">
-        <h2 className="text-3xl font-bold text-gray-700 text-center pt-3">
+    <div className="flex flex-col md:flex-row-reverse items-center justify-center md:py-20 px-4 space-y-6 md:space-y-0 md:space-x-6">
+      {/* Login Form Section */}
+      <div className="card w-full max-w-sm shadow-2xl m-5 rounded-lg dark:bg-[#3e4369] bg-white">
+        <h2 className="text-3xl font-bold text-gray-700 dark:text-white text-center pt-3">
           Login
         </h2>
         <form onSubmit={handleSubmit} className="card-body space-y-3">
-          {/* Email Input */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium text-gray-700 dark:text-white">
                 Email
               </span>
             </label>
@@ -72,15 +71,13 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="input input-bordered focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+              className="input input-bordered text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
               required
             />
           </div>
-
-          {/* Password Input */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium text-gray-700 dark:text-white">
                 Password
               </span>
             </label>
@@ -88,7 +85,7 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              className="input input-bordered focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+              className="input input-bordered text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
               required
             />
             <label className="label">
@@ -100,8 +97,6 @@ const Login = () => {
               </a>
             </label>
           </div>
-
-          {/* Login Button */}
           <div className="form-control">
             <button
               type="submit"
@@ -110,8 +105,6 @@ const Login = () => {
               Login
             </button>
           </div>
-
-          {/* Google Login Button */}
           <button
             type="button"
             onClick={handleGoogleLoginClick}
@@ -124,15 +117,21 @@ const Login = () => {
             />
             <span>Google Login</span>
           </button>
-
-          {/* Register Link */}
-          <h2 className="text-center text-lg font-bold">
+          <h2 className="text-center text-lg text-gray-600 dark:text-white font-bold">
             Don’t Have An Account?{" "}
             <span className="text-red-500 font-bold">
               <Link to="/register">Register</Link>
             </span>
           </h2>
         </form>
+      </div>
+
+      {/* Animation Section */}
+      <div className="w-full md:w-1/2 order-first md:order-last">
+        <Lottie
+          animationData={loginLottieData}
+          className="w-full h-[250px] md:h-[400px]"
+        />
       </div>
     </div>
   );

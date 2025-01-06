@@ -1,19 +1,42 @@
-
-
-import React, { useContext, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import { FaSun, FaMoon } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    if (savedDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   const handleLogout = () => {
     logout();
     navigate("/");
+  };
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem("darkMode", newDarkMode);
+
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   const links = (
@@ -33,7 +56,7 @@ const Navbar = () => {
           More
         </button>
         {isDropdownOpen && (
-          <ul className="dropdown-content absolute menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow top-full mt-2 left-0">
+          <ul className="dropdown-content absolute menu bg-[#161b3d] dark:bg-pink-500 dark:text-white rounded-box z-[1] w-52 p-2 shadow top-full mt-2 left-0">
             <li>
               <NavLink to="/upcomingGames">Upcoming Games</NavLink>
             </li>
@@ -60,18 +83,18 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <NavLink to="/about">About</NavLink>
+      </li>
     </>
   );
 
   return (
-    <div className="navbar bg-pink-100 sticky z-50 top-0 backdrop-blur bg-opacity-10">
+    <div className="navbar dark:bg-pink-400 sticky z-50 top-0 bg-[#222747] px-7 dark:text-black text-white">
       <div className="navbar-start flex items-center gap-4">
+        {/* Dropdown Menu for Small Devices */}
         <div className="dropdown lg:hidden">
-          <button
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost"
-          >
+          <button tabIndex={0} role="button" className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -94,15 +117,32 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
+
+        {/* Logo Section */}
         <a className=" text-lg font-bold text-pink-600 md:text-3xl">
-          Chill Gamer
+          <img className="h-14 w-24 object-cover" src={logo} alt="Logo" />
         </a>
       </div>
+
+      {/* Navbar Links for Large Devices */}
       <div className="navbar-center hidden lg:flex flex-grow">
         <ul className="menu menu-horizontal px-1 flex gap-4">{links}</ul>
       </div>
 
       <div className="navbar-end flex items-center gap-4">
+        {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 rounded flex items-center hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+        >
+          {darkMode ? (
+            <FaMoon className="text-lg" />
+          ) : (
+            <FaSun className="text-lg" />
+          )}
+        </button>
+
+        {/* User Info */}
         {user ? (
           <div className="flex items-center gap-3">
             <img
@@ -116,7 +156,7 @@ const Navbar = () => {
             </Tooltip>
             <button
               onClick={handleLogout}
-              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+              className="btn bg-pink-600 text-white text-xs md:text-sm lg:text-base px-2 py-1 md:px-3 md:py-2 lg:px-4 lg:py-2"
             >
               Logout
             </button>
@@ -125,13 +165,13 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <Link
               to="login"
-              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+              className="btn bg-pink-600 text-white text-xs md:text-sm lg:text-base px-2 py-1 md:px-3 md:py-2 lg:px-4 lg:py-2"
             >
               Login
             </Link>
             <Link
               to="register"
-              className="btn bg-pink-600 text-white text-sm md:text-base px-2 py-1 md:px-4 md:py-2"
+              className="btn bg-pink-600 text-white text-xs md:text-sm lg:text-base px-2 py-1 md:px-3 md:py-2 lg:px-4 lg:py-2"
             >
               Register
             </Link>

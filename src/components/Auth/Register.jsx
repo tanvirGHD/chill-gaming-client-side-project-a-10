@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import registerLottieData from '../../assets/Animation - 1736180117426.json'
+import Lottie from "lottie-react";
 
 const Register = () => {
   const { createNewUser, manageProfile, setUser } = useContext(AuthContext);
@@ -78,9 +80,9 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center md:py-24 bg-pink-100">
-      <div className="card bg-white w-full max-w-lg shadow-2xl rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-700 text-center">
+    <div className="flex flex-col md:flex-row-reverse items-center justify-center md:py-20  px-4 space-y-6 md:space-y-0 md:space-x-6">
+      <div className="card bg-white my-5 dark:bg-[#3e4369] dark:text-white w-full max-w-lg shadow-2xl rounded-lg p-8">
+        <h2 className="text-3xl font-bold dark:text-white text-gray-700 text-center">
           Register
         </h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
@@ -88,7 +90,7 @@ const Register = () => {
           {/* Username Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium dark:text-white text-gray-700">
                 Username
               </span>
             </label>
@@ -103,7 +105,7 @@ const Register = () => {
           {/* Email Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium dark:text-white text-gray-700">
                 Email
               </span>
             </label>
@@ -118,7 +120,7 @@ const Register = () => {
           {/* Password Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium dark:text-white text-gray-700">
                 Password
               </span>
             </label>
@@ -133,7 +135,7 @@ const Register = () => {
           {/* Photo URL Field */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">
+              <span className="label-text font-medium dark:text-white text-gray-700">
                 Photo URL
               </span>
             </label>
@@ -154,13 +156,20 @@ const Register = () => {
               Register
             </button>
           </div>
-          <h2 className="text-center text-lg font-bold">
+          <h2 className="text-center text-lg dark:text-white text-gray-700 font-bold">
             Already have an account?{" "}
             <span className="text-red-500 font-bold">
               <Link to="/login">Login</Link>
             </span>
           </h2>
         </form>
+      </div>
+        {/* Animation Section */}
+        <div className="w-full md:w-1/2 order-first md:order-last">
+        <Lottie
+          animationData={registerLottieData}
+          className="w-full h-[250px] md:h-[400px]"
+        />
       </div>
     </div>
   );

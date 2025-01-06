@@ -9,9 +9,9 @@ const latestReviews = [
 
 const LatestReviews = () => {
   return (
-    <div className="w-10/12 mx-auto h-screen">
-      <h1 className="text-2xl font-bold mb-4">Latest Reviews</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="w-10/12 mx-auto h-screen ">
+      <h1 className="text-3xl font-bold m-5 text-pink-500">Latest Reviews</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
         {latestReviews.map((review, index) => (
           <div key={index} className="card w-80 bg-base-100 shadow-xl">
             <figure>

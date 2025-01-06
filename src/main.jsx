@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout.jsx";
-import Home from "./components/Header/Home.jsx";
 import Login from "./components/Auth/Login.jsx";
 import Register from "./components/Auth/Register.jsx";
 import AddReview from "./components/Reviews/AddReview.jsx";
@@ -19,6 +18,8 @@ import LatestReviews from "./components/More/LatestReviews.jsx";
 import Error from "./components/error/Error.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import AllReviews from "./components/Reviews/AllReviews.jsx";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
+import About from "./components/AboutUs/About.jsx";
 
 
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>,
+        element: <LandingPage></LandingPage>,
         loader: () => fetch('http://localhost:5000/review')
       },
       {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: '/popularGames',
         element:<PopularGames></PopularGames>
+      },
+      {
+        path: '/about',
+        element:<About></About>
       },
       {
         path:'/footer',

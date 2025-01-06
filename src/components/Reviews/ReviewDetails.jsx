@@ -3,6 +3,8 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
+import "@smastrom/react-rating/style.css";  
+import { Rating } from "@smastrom/react-rating";
 
 const ReviewDetails = () => {
   const reviews = useLoaderData();
@@ -15,7 +17,7 @@ const ReviewDetails = () => {
   };
 
   return (
-    <div className="bg-pink-100 md:py-20">
+    <div className=" md:py-20">
       <div className="p-6 max-w-lg mx-auto ">
         <div className="bg-white rounded-lg shadow-md p-4">
           <img
@@ -31,7 +33,7 @@ const ReviewDetails = () => {
             <strong>Review:</strong> {reviews.reviewDescription}
           </p>
           <p className="text-gray-800 mb-2">
-            <strong>Rating:</strong> {reviews.rating} / 5
+            <Rating style={{ maxWidth: 100 }} value={reviews.rating} readOnly />
           </p>
           <p className="text-gray-800 mb-2">
             <strong>Genre:</strong> {reviews.genre}
@@ -43,7 +45,7 @@ const ReviewDetails = () => {
             <Link
               to="/watchList"
               onClick={handleAddToWatchlist}
-              className="flex items-center justify-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="flex items-center justify-center bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700"
             >
               <FaBookmark className="h-5 w-5 mr-2" />
               Add to WatchList

@@ -52,10 +52,10 @@ const AddReview = () => {
   };
 
   return (
-    <div class="bg-pink-100 min-h-screen flex items-center justify-center">
+    <div class=" min-h-screen flex items-center justify-center">
       <form
         onSubmit={handleAddReview}
-        class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl"
+        class=" p-8 rounded-lg shadow-2xl w-full max-w-2xl"
       >
         <h2 class="text-pink-500 text-2xl font-bold mb-4 text-center">
           Add New Game Review

@@ -40,7 +40,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div className="bg-pink-100 h-screen">
+    <div className=" h-screen">
       <h2 className="font-bold p-3 text-3xl">My Reviews</h2>
 
       {/* Mobile Responsive Table */}
@@ -48,7 +48,7 @@ const MyReviews = () => {
         <table className="table w-full">
           {/* Table Header */}
           <thead>
-            <tr>
+            <tr className="text-pink-500">
               <th>#</th>
               <th>Photo</th>
               <th>Name</th>
