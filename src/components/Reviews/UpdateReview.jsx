@@ -43,7 +43,7 @@ const UpdateReview = () => {
 
     // send data to the server
     fetch(
-      `http://localhost:5000/review/${_id}`,
+      `https://assignment-10-server-side-eta-eight.vercel.app/review/${_id}`,
       {
         method: "PUT",
         headers: {

@@ -33,12 +33,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <LandingPage></LandingPage>,
-        loader: () => fetch('http://localhost:5000/review')
+        loader: () => fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
       },
       {
         path: 'allReviews',
         element: <AllReviews></AllReviews>,
-        loader: () => fetch('http://localhost:5000/review')
+        loader: () => fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
       },
       { path: "login",
         element: <Login></Login>
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {
         path:'updateReview/:id', 
         element: <UpdateReview></UpdateReview>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-eta-eight.vercel.app/review/${params.id}`)
       },
       {
         path: '/myReviews',
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/review')
+        loader: ()=> fetch('https://assignment-10-server-side-eta-eight.vercel.app/review')
       },
       {
         path:'/watchList',
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element:<PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-eta-eight.vercel.app/review/${params.id}`)
       },
       {
         path: '/upcomingGames',
