@@ -1,25 +1,9 @@
-// import { Outlet } from "react-router-dom";
-// import Navbar from "../components/Header/Navbar";
-// import Footer from "../components/footer/Footer";
-
-// const Layout = () => {
-//     return (
-//         <div className="bg-pink-100">
-//         <div className="w-11/12 mx-auto">
-//         <Navbar></Navbar>
-//         <Outlet></Outlet>
-//         </div>
-//         <div><Footer></Footer></div>
-//         </div>
-//     );
-// };
-// 7
-// export default Layout;
-
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/footer/Footer";
+import Home from "../components/Header/Home";
+
 
 const Layout = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,11 +38,11 @@ const Layout = () => {
     <div className="dark:bg-pink-300 bg-[#3e4369] dark:text-black text-white">
       <Navbar />
 
-      <div className="w-11/12 mx-auto">
+      <div className={Home ? "w-full mx-auto" : "w-11/12 mx-auto"}>
         <Outlet />
       </div>
       <div className="bg-[#161b3d] dark:bg-white dark:text-black text-white">
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
