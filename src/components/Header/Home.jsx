@@ -181,6 +181,7 @@ const Home = () => {
                   <button className=" bg-pink-600 px-3 py-1  text-white mt-2 rounded-xl hover:underline">
                     <Link to={`/details/${review._id}`}>Explore Details</Link>
                   </button>
+                  
                 </div>
               </Fade>
             ))}

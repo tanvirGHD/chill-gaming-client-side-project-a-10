@@ -86,6 +86,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About</NavLink>
       </li>
+      <li>
+        <NavLink to="/support">Support</NavLink>
+      </li>
     </>
   );
 
@@ -112,7 +115,7 @@ const Navbar = () => {
           </button>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+            className="dropdown-content menu bg-[#222747] dark:bg-pink-400 rounded-box z-[1] w-52 p-2 shadow"
           >
             {links}
           </ul>

@@ -18,9 +18,9 @@ const Faq = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="w-full md:w-1/2 text-black">
+        <div className="w-full md:w-1/2 text-white">
           {/* FAQ 1 */}
-          <div className="collapse collapse-arrow bg-base-200 mb-2">
+          <div className="collapse collapse-arrow border rounded-lg mb-2">
             <input type="radio" name="my-accordion-2" defaultChecked />
             <div className="collapse-title text-xl font-medium">
               What is Gaming Heaven?
@@ -35,7 +35,7 @@ const Faq = () => {
           </div>
 
           {/* FAQ 2 */}
-          <div className="collapse collapse-arrow bg-base-200 mb-2">
+          <div className="collapse collapse-arrow border rounded-lg mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               How do I browse games on the platform?
@@ -50,7 +50,7 @@ const Faq = () => {
           </div>
 
           {/* FAQ 3 */}
-          <div className="collapse collapse-arrow bg-base-200 mb-2">
+          <div className="collapse collapse-arrow border rounded-lg  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               Can I filter games by price?
@@ -64,7 +64,7 @@ const Faq = () => {
           </div>
 
           {/* FAQ 4 */}
-          <div className="collapse collapse-arrow bg-base-200 mb-2">
+          <div className="collapse collapse-arrow border rounded-lg  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               How do I purchase a game?
@@ -79,7 +79,7 @@ const Faq = () => {
           </div>
 
           {/* FAQ 5 */}
-          <div className="collapse collapse-arrow bg-base-200 mb-2">
+          <div className="collapse collapse-arrow border rounded-lg  mb-2">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               What payment methods do you accept?

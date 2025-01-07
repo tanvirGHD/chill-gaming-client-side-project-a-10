@@ -20,6 +20,8 @@ import Footer from "./components/footer/Footer.jsx";
 import AllReviews from "./components/Reviews/AllReviews.jsx";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import About from "./components/AboutUs/About.jsx";
+import Support from "./components/Support/Support.jsx";
+import Faq from "./components/FAQ/Faq.jsx";
 
 
 
@@ -87,8 +89,16 @@ const router = createBrowserRouter([
         element:<About></About>
       },
       {
+        path: '/support',
+        element:<Support></Support>
+      },
+      {
         path:'/footer',
         element: <Footer></Footer>
+      },
+      {
+        path:'/faq',
+        element: <Faq></Faq>
       },
       {
         path:'*',
